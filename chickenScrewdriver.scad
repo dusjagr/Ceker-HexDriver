@@ -1,8 +1,10 @@
 $fn=100;
 
-HexSize = 11.5; //[10:24] 
-// 17.5 for the aviator plug M12
-// 11.5 for the poti M6
+HexSize = 11.9; //[10:24] 
+// 17.5 for the aviator plug M12 WORKING
+// scale([1,1.1,0.88])
+// 11.9 for the poti M6 WORKING (changed dimenesions of outer diam and relation to ceker
+// scale([1.2,1.2,1.1])
 // longest distance from corner to corner
 
 factor = HexSize / 12;
@@ -28,7 +30,7 @@ scale([factor,factor,factor/1]) difference(){
     scale([1.2,1.2,1.1]) rotate([0,0,0]) translate([-4.7,18,-7.5]) rotate([98,8,0]) import("Ceker_smooth.stl", convexity=3);
     translate([0,0,4-1.2]) cylinder(h=8, r1=7.5, r2=4, center=true);
     minkowski(){
-        translate([0,0,-6.2]) cylinder(h=10, r=6.3, center=true);
+        translate([0,0,-6.2]) cylinder(h=10, r=6.8, center=true);
         sphere(1.2);
     }
   }
