@@ -2,7 +2,7 @@ $fn=100;
 
 HexSizeM6 = 11.9; 
 HexSizeM8 = 14.1;  //guessed
-HexSizeM10 = 15.8; //guessed
+HexSizeM10 = 16.4; //guessed
 HexSizeM12 = 17.5;
 
 // 17.5 for the aviator plug M12 WORKING for stomp switch
@@ -25,7 +25,7 @@ foot = 1; //[1,2]
 
 if(foot==1){
 //color("hotpink") translate([60,0,0]) natural();
-//color("DimGray") natural_mid();
+color("DimGray") natural_mid();
 //translate([-60,0,0]) natural_M10();
 //color("indigo") translate([-120,0,0]) natural_big();
 }
@@ -34,7 +34,7 @@ if(foot==2){
 standing();
 }
 
-psychobilly_mid();
+//psychobilly_mid();
 
 module psychobilly_mid(){
 scale([factorM8,factorM8,factorM8/1]) difference(){
@@ -60,7 +60,7 @@ scale([0.13,0.13,0.13]){
 rotate([0,0,-$t * 360]){
 
      for(ltl = [0]){
-       lArr = ["psycho M8"][ltl];
+       lArr = ["Ceker M 8"][ltl];
        cCirc = 2 * PI * 30;
       for(lp = [0:(len(lArr)-1)]){
         rotate((lp*16)/cCirc * 360+(ltl * 28)) translate([60,0,-ltl*20]) rotate([90,0,90])
@@ -137,13 +137,13 @@ scale([factorM6,factorM6,factorM6/1]) difference(){
   union()  {
     scale([1.2,1.2,1.07]) rotate([0,0,0]) translate([-4.7,18,-7.5]) rotate([98,8,0]) import("Ceker_smooth.stl", convexity=3);
     translate([0,0,4-1.2]) cylinder(h=8, r1=7.5, r2=4, center=true);
-    minkowski(){
-        translate([0,0,-6.2]) cylinder(h=10, r=6.8, center=true);
+   minkowski(){
+        translate([0,0,-7.7]) cylinder(h=13, r=6.8, center=true);
         sphere(1.2);
     }
   }
-  translate([0,0,-6]) cylinder(h=12, d=12,center=true, $fn=6);
-  translate([0,0,-12.22]) cylinder(h=0.46, d1=12.4,d2=12,center=true, $fn=6);
+  translate([0,0,-8]) cylinder(h=16, d=12,center=true, $fn=6);
+  translate([0,0,-15.22]) cylinder(h=0.46, d1=12.4,d2=12,center=true, $fn=6);
   translate([0,0,2.99]) cylinder(h=6, d1=12,d2=0,center=true, $fn=6);
   //translate([0,0,-2]) rotate([90,0,180]) linear_extrude(3) scale([0.5,0.5,0.5]) text("16");
   translate([0,0,-8]) writing();

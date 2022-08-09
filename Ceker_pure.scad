@@ -9,10 +9,10 @@ HexSize = 14; //[10:24]
 
 factor = HexSize / 12;
 
-foot = 2; //[1,2]
+foot = 1; //[1,2]
 
 if(foot==1){
-natural();
+ translate([0,0,50]) rotate([90,0,0]) natural();
 }
 
 if(foot==2){
