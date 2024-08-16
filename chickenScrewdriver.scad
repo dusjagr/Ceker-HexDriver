@@ -21,17 +21,20 @@ factorM8 = HexSizeM8 / 12;
 factorM10 = HexSizeM10 / 12;
 factorM12 = HexSizeM12 / 12;
 
-foot = 1; //[1,2]
+foot = 2; //[1,2]
 
 if(foot==1){
-//color("hotpink") translate([60,0,0]) natural();
-color("DimGray") natural_mid();
-//translate([-60,0,0]) natural_M10();
-//color("indigo") translate([-120,0,0]) natural_big();
+color("hotpink") translate([60,0,0]) natural_M6();
+color("DimGray") natural_M8();
+translate([-60,0,0]) natural_M10();
+color("indigo") translate([-120,0,0]) natural_M12();
 }
 
 if(foot==2){
-standing();
+   difference(){
+     standing();
+     translate([0,0,-6]) cylinder(h=12, d=5.1,center=true, $fn=30);
+   }
 }
 
 //psychobilly_mid();
@@ -77,7 +80,7 @@ color("green") cylinder(r=56, h=98, $fn=200, center=true);
 }
 
 // natural chicken foot
-module natural_big(){
+module natural_M12(){
 scale([factorM12,factorM12,factorM12/1]) difference(){
   union()  {
     scale([1.1,1.15,0.93]) rotate([0,0,0]) translate([-4.7,18,-7.5]) rotate([98,8,0]) import("Ceker_smooth.stl", convexity=3);
@@ -114,7 +117,7 @@ scale([factorM10,factorM10,factorM10/1]) difference(){
 }
 }
 
-module natural_mid(){
+module natural_M8(){
 scale([factorM8,factorM8,factorM8/1]) difference(){
   union()  {
     scale([1.06,1.08,1.01]) rotate([0,0,0]) translate([-4.7,18,-7.5]) rotate([98,8,0]) import("Ceker_smooth.stl", convexity=3);
@@ -132,7 +135,7 @@ scale([factorM8,factorM8,factorM8/1]) difference(){
 }
 }
 
-module natural(){
+module natural_M6(){
 scale([factorM6,factorM6,factorM6/1]) difference(){
   union()  {
     scale([1.2,1.2,1.07]) rotate([0,0,0]) translate([-4.7,18,-7.5]) rotate([98,8,0]) import("Ceker_smooth.stl", convexity=3);
@@ -174,22 +177,16 @@ scale([factor,factor,factor/1]) difference(){
 // 3d chicken foot
 
 module standing(){
-difference(){
-    scale([0.0002,0.0002,0.0002]) import("ChickenLeg.stl", convexity=3);
-    translate([0,5,0]) cylinder(h= 2.1, r=40, center=true);
-}
-
-translate([0,3,26]) cylinder(h=8, r1=4, r2=7.5, center=false);
-
 
 difference(){
-minkowski(){
-translate([0,3,34]) cylinder(h=8, r=6.5, center=false);
+    scale([1.06,1.08,1.01]) rotate([0,0,0]) translate([-4.7,18,-7.5]) rotate([98,8,0]) import("Ceker_smooth.stl", convexity=3);
+    }
+
+difference(){
+  minkowski(){
+    translate([0,0,0]) rotate([180,0,0]) cylinder(h=4, r=7.5, center=false);
     sphere(1.2);
-}
-
-#translate([0,3,38]) cylinder(h=12, r=5,center=true, $fn=6);
- translate([-3.9,-3.8,36]) rotate([90,0,0]) linear_extrude(3) scale([0.5,0.5,0.5]) text("10");
-}
+    }
+  }
 }
 
