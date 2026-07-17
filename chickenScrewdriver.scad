@@ -21,7 +21,7 @@ factorM8 = HexSizeM8 / 12;
 factorM10 = HexSizeM10 / 12;
 factorM12 = HexSizeM12 / 12;
 
-foot = 2; //[1,2]
+foot = 1; //[1,2]
 
 if(foot==1){
 color("hotpink") translate([60,0,0]) natural_M6();

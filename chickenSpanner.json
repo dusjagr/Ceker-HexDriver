@@ -1,0 +1,14 @@
+{
+    "parameterSets": {
+        "spanner rod bit": {
+            "$fn": "100",
+            "HexSizeM10": "16.4",
+            "HexSizeM12": "17.5",
+            "HexSizeM6": "11.9",
+            "HexSizeM8": "14.1",
+            "handle_style": "Hex Rod Adapter",
+            "tool_to_render": "Spanner M6"
+        }
+    },
+    "fileFormatVersion": "1"
+}
