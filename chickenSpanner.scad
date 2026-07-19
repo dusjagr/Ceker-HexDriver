@@ -17,7 +17,7 @@ factorM10 = ((HexFlatM10 + hex_nut_tolerance) / cos(30)) / 12;
 factorM12 = ((HexFlatM12 + hex_nut_tolerance) / cos(30)) / 12;
 
 handle_style = "Chicken Foot"; // ["Chicken Foot", "Simple Knob", "Hex Rod Adapter"]
-handle_diameter = 14; // [10:1:30] Absolute diameter for Simple Knob and Hex Rod
+handle_diameter = 11; // [10:1:30] Absolute diameter for Simple Knob and Hex Rod
 hex_adapter_height = 10; // [5:1:50]
 hex_rod_flat_width = 4.0; // [3.5:0.05:5.0]
 tool_to_render = "Spanner M6"; // ["All", "9mm Hex", "M6 Hex", "M8 Hex", "M10 Hex", "M12 Hex", "Spanner M6", "Spanner M12", "Standing"]
